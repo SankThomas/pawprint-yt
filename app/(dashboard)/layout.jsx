@@ -37,21 +37,6 @@ export default function DashboardLayout({ children }) {
     }
   }, [user, currentUser, createUser]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1024) {
-        setSidebarOpen(true);
-      } else {
-        setSidebarOpen(false);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   if (!isLoaded || !isSignedIn) {
     return <LoadingSpinner />;
   }
@@ -61,7 +46,7 @@ export default function DashboardLayout({ children }) {
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="lg:flex-1">
         <Header onMenuClick={() => setSidebarOpen(true)} />
-        <main className="pt-16 lg:pl-64">{children}</main>
+        <main className="pt-16">{children}</main>
       </div>
     </div>
   );
