@@ -78,8 +78,8 @@ export default function Sidebar({ isOpen, onClose }) {
       {/* Sidebar */}
       <div
         className={cn(
-          "!lg:static fixed inset-y-0 left-0 z-50 w-64 transform border-r border-gray-200 bg-white shadow-lg transition-transform duration-300 ease-in-out lg:inset-0 lg:translate-x-0",
-          isOpen ? "translate-x-0" : "!-translate-x-full",
+          "fixed inset-y-0 left-0 z-50 w-64 transform border-r border-gray-200 bg-white shadow-lg transition-transform duration-300 ease-in-out lg:static lg:inset-0 lg:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
         <div className="flex h-16 items-center justify-between border-b border-gray-200 px-6">
